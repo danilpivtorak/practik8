@@ -1,0 +1,22 @@
+#include <iostream>
+#include <algorithm>
+#include <string>
+
+int main() {
+    std::string word;
+    std::cin >> word;
+    
+    // Сортуємо букви слова у алфавітному порядку
+    std::sort(word.begin(), word.end());
+    
+    // Використовуємо стандартну бібліотеку C++ для знаходження унікальних анаграм
+    int count = 0;
+    do {
+        std::cout << word << std::endl;
+        count++;
+    } while (std::next_permutation(word.begin(), word.end()));
+    
+    std::cout << "Кількість анаграм: " << count << std::endl;
+    
+    return 0;
+}
